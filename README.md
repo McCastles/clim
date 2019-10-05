@@ -7,5 +7,6 @@ Usage:
 
 ```bash
 python3 clim green
+```
 
 JSON files do belong to [these guys](https://mtgjson.com/downloads/decks/), check them out.

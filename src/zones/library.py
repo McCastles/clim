@@ -10,6 +10,6 @@ class Library(Zone):
             self.cards.append(card)
         self.shuffle()
 
-    def pop(self):
-
-        return self.cards.pop()
+    def display(self, sorted_by='convertedManaCost'):
+        super().display(sorted_by=sorted_by)
+        self.shuffle()
