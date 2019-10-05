@@ -5,7 +5,7 @@ from .zones.hand import Hand
 
 class Player:
 
-    def __init__(self, deck, name=None):
+    def __init__(self, deck, name=None, hp=20):
         if name:
             self.name = name
         else:
@@ -14,6 +14,7 @@ class Player:
 
         self.library = Library(deck.cards, self.name)
         self.hand = Hand(self.name)
+        self.hp = hp
 
     def __repr__(self):
         return f'''
@@ -29,7 +30,7 @@ class Player:
     def mulligan(self):
         new_size = len(self.hand) - 1
         self.library.gain_cards(self.hand, qty=len(self.hand))
-        print(f'Now {self.name} hand is empty: {len(self.hand)} {len(self.library)}')
+        # print(f'Now {self.name} hand is empty: {len(self.hand)} {len(self.library)}')
         self.draw(new_size)
         self.library.shuffle()
 
